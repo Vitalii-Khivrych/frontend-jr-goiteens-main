@@ -1,0 +1,39 @@
+{% set section = lesson %}
+
+<section class="{{section.id}} section bg-third overflow-hidden">
+  <div class="container">
+    <h2 class="section-title mb-[78px] text-center md:mb-[94px] xl:mb-[114px]">
+      {{section.title}}
+    </h2>
+    <div class="mb-6 md:mb-10 md:flex md:gap-3 xl:gap-4">
+      <p
+        class="md:pt-[172px] md:text-center md:text-xl md:font-bold md:uppercase md:leading-normal xl:pt-[126px] xl:text-2xl xl:leading-9 smOnly:hidden mdOnly:pl-[50px]"
+      >
+        {{section.title}}
+      </p>
+      <ul
+        class="text-center text-base font-medium md:grid md:grid-cols-2 md:gap-x-5 md:gap-y-[74px] xl:grid-cols-4 xl:text-lg"
+      >
+        {% for item in section.list %}
+        <li
+          class="lesson-item h-[184px] rounded-card bg-white px-3 pb-6 pt-[60px] shadow-card md:h-[240px] md:even:bg-accent smOnly:mb-[78px] smOnly:last:mb-0"
+        >
+          {{item}}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <p
+      class="mb-6 text-center font-medium md:mx-auto md:mb-10 md:w-[598px] xl:w-[673px] xl:text-lg"
+    >
+      {{section.text}}
+    </p>
+    <button
+      type="button"
+      data-modal-open
+      class="btn mx-auto h-11 w-[280px] md:h-12 md:w-[336px] xl:h-[52px] xl:w-[259px]"
+    >
+      {{section.button}}
+    </button>
+  </div>
+</section>

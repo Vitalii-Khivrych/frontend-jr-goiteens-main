@@ -1,0 +1,69 @@
+{% set section = footer %}
+<footer class="{{section.id}} bg-[#202020] pt-8 pb-[64px] text-white font-gotham md:py-10">
+  <div class="container justify-between md:flex">
+    <div class="flex justify-between md:flex-col smOnly:mb-[55px]">
+      <a class="" href="{{page.canonical}}" aria-label="{{logo.link_logo_aria}}">
+        <svg
+          class="md:h-[36px] md:w-[142px]"
+          width="118"
+          height="30"
+          aria-label="{{logo.logo_aria}}"
+        >
+          <title>{{logo.logo_aria}}</title>
+          <use href="./assets/images/sprite.svg#logo-white"></use>
+        </svg>
+      </a>
+      <ul class="grid grid-cols-2 gap-[30px] md:grid-cols-4">
+        {% for item in section.socialLinks %}
+        <li>
+          <a
+            href="{{item.link}}"
+            rel="noopener noreferrer nofollow"
+            aria-label="{{item.alt}}"
+            target="_blank"
+          >
+            <svg
+              class="hover:fill-secondAccent focus:fill-secondAccent fill-white duration-300"
+              width="32"
+              height="32"
+              aria-label="{{item.alt}}"
+            >
+              <title>{{item.altLink}}</title>
+              <use href="./assets/images/sprite.svg#{{item.type}}"></use>
+            </svg>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="text-center md:text-right">
+      <a href="{{section.tel}}" class="mb-7 block text-[20px] leading-[0.9]">
+        <svg width="24" height="24" class="inline-block" aria-label="{{section.telAria}}">
+          <use href="./assets/images/sprite.svg#tell"></use>
+        </svg>
+        {{section.telText}}</a
+      >
+      <ul class="mb-7 flex justify-center gap-4 md:justify-end">
+        {% for item in section.payList %}
+        <li>
+          <svg width="34" height="34" aria-label="{{item.alt}}">
+            <title>{{item.altLink}}</title>
+            <use href="./assets/images/sprite.svg#{{item.type}}"></use>
+          </svg>
+        </li>
+        {% endfor %}
+      </ul>
+      <div class="md:flex md:gap-[14px] md:text-end xl:flex xl:gap-4 smOnly:text-center">
+        {% for item in section.agreementList %}
+        <a
+          href="{{item.link}}"
+          class="block text-[16px] text-[#ABABAB] underline duration-300 hover:text-accent"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+          >{{item.text}}</a
+        >
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</footer>

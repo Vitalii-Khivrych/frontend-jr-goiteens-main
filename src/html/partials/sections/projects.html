@@ -1,0 +1,39 @@
+{% set section = projects %}
+
+<section class="{{section.id}} section projects-section">
+  <div class="container">
+    <h2 class="section-title mb-6 xl:mb-8">{{section.title}}</h2>
+    <p class="mb-6 text-center text-base font-bold md:mb-10 xl:mb-[60px] xl:text-lg">
+      {{section.subtitle}}
+    </p>
+    <div class="projects-slider">
+      {% for item in section.list %}
+      <div class="p-2">
+        <div
+          class="mb-5 rounded-3xl bg-white p-[10px] shadow-projectsCard md:h-[250px] xl:h-[208px] mdOnly:rounded-[29px]"
+        >
+          <picture>
+            <source
+              srcset="{{item.image.1x}}.webp 1x, {{item.image.2x}}.webp 2x"
+              type="image/webp"
+            />
+            <img
+              class="h-full w-full"
+              srcset="{{item.image.1x}}.jpg 1x, {{item.image.2x}}.jpg 2x"
+              src="{{item.image.1x}}.jpg"
+              alt="Фото проєкту '{{item.title}}'"
+              width="262"
+              height="189"
+              loading="lazy"
+            />
+          </picture>
+        </div>
+        <h3 class="mb-3 text-lg font-bold uppercase text-white mdOnly:mb-2 mdOnly:text-base">
+          {{item.title}}
+        </h3>
+        <p class="text-lg text-white mdOnly:text-base">{{item.text}}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,14 @@
+{% set section = profession %}
+
+<section class="{{section.id}} section md:pb-[77px] xl:pb-20">
+  <div class="container">
+    <h2 class="section-title mb-[108px] md:mb-10 xl:mb-[60px]">{{section.title}}</h2>
+    <ul class="xl:flex xl:items-center xl:justify-between">
+      {% for item in section.list %}
+      <li class="profession-item">
+        <p class="profession-text relative text-sm md:pl-[122px] md:text-lg">{{item.text}}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

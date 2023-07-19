@@ -1,0 +1,45 @@
+{% set section = teachers %}
+
+<section class="{{section.id}} section bg-white">
+  <div class="container">
+    <h2 class="section-title mb-4 text-center md:mb-6 xl:mx-auto xl:mb-8 xl:w-[835px]">
+      {{section.title}}
+    </h2>
+    <p class="mb-6 text-center text-base font-medium md:mb-10 xl:mb-8 xl:text-lg">
+      {{section.text}}
+    </p>
+
+    <div class="teachers-slider">
+      {% for teacher in section.teachers %}
+
+      <div class="text-center">
+        <div class="img-wrapper mx-auto mb-5 md:mb-6 xl:mb-8">
+          <picture>
+            <!-- WEBP -->
+            <source
+              type="image/webp"
+              srcset="
+                ./assets/images/teachers/teacher-{{loop.index}}.webp    1x,
+                ./assets/images/teachers/teacher-{{loop.index}}@2x.webp 2x
+              "
+            />
+            <img
+              width="270"
+              height="401"
+              loading="lazy"
+              alt="{{teacher.alt}}"
+              src="./assets/images/teachers/teacher-{{loop.index}}.png"
+              srcset="./assets/images/teachers/teacher-{{loop.index}}@2x.png 2x"
+            />
+          </picture>
+        </div>
+
+        <h3 class="mb-3 text-lg font-bold text-button mdOnly:mb-2">{{teacher.name}}</h3>
+        <p class="mb-5 text-lg mdOnly:mb-4">{{teacher.description}}</p>
+        <p class="text-lg text-button">{{teacher.position}}</p>
+      </div>
+
+      {% endfor %}
+    </div>
+  </div>
+</section>

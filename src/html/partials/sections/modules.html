@@ -1,0 +1,134 @@
+{% set section = modules %}
+
+<section class="section modules" data-modules>
+  <div class="container">
+    <h2 class="section-title mb-6 md:mb-10 xl:mb-[60px]">{{section.title}}</h2>
+    <ul class="mb-4 flex justify-center gap-[42px] md:gap-[60px] xl:mb-5">
+      {% for button in section.buttons %}
+      <li>
+        <button
+          type="button"
+          data-selector="{{loop.index}}"
+          class="font-bold uppercase text-button opacity-50 md:text-lg"
+          aria-label="{{section.buttonAria}}{{loop.index}}"
+        >
+          {{button}}
+        </button>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="relative">
+    {% for block in section.blocks %}
+    <div
+      data-content="{{loop.index}}"
+      class="content content-block-{{loop.index}} transition-opacity duration-1000"
+    >
+      <div class="bg-accent">
+        <div class="container py-5 md:flex md:gap-[54px] md:py-8 xl:justify-between xl:py-10">
+          <h3
+            class="max-w-[215px] text-sm font-bold uppercase xl:max-w-[382px] xl:text-lg smOnly:mb-3"
+          >
+            {{block.title}}
+          </h3>
+          <svg
+            width="80"
+            height="16"
+            class="xl:hidden smOnly:mb-3"
+            aria-label="{{section.starsIconAria}}{{block.difficulty}}"
+          >
+            <use href="./assets/images/sprite.svg#star-{{block.difficulty}}"></use>
+          </svg>
+          <svg
+            width="88"
+            height="24"
+            class="hidden xl:block"
+            aria-label="{{section.starsIconAria}}{{block.difficulty}}"
+          >
+            <use href="./assets/images/sprite.svg#star-{{block.difficulty}}-large"></use>
+          </svg>
+          <p class="text-sm font-bold xl:text-lg smOnly:mb-3">{{block.duration}}</p>
+          <ul class="flex flex-col gap-1 md:gap-2 xl:gap-0">
+            {% for lesson in block.lessons %}
+            <li class="text-sm xl:text-lg">{{lesson}}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      {% for stamp in block.schedule %}
+      <div class="stamp-{{loop.index}}">
+        <div class="container py-5 md:py-8 xl:py-10">
+          <p
+            class="mb-5 inline-block rounded-[4px] bg-accent px-[14px] py-1 text-lg font-bold text-button"
+          >
+            {{stamp.timestamp}}
+          </p>
+          <div class="xl:flex xl:items-start xl:gap-8">
+            <ul class="mb-5 flex flex-col gap-5 md:flex-row md:gap-8 xl:mb-0">
+              {% for skill in stamp.skills %}
+              <li class="md:w-[336px] xl:w-[384px]">
+                <h3 class="mb-3 text-lg font-bold xl:mb-5 xl:text-xl xl:leading-[30px]">
+                  {{skill.title}}
+                </h3>
+                <p class="text-sm md:text-base xl:text-lg">{{skill.text}}</p>
+              </li>
+              {% endfor %}
+            </ul>
+            <div>
+              <h3 class="mb-3 text-lg font-bold xl:mb-5 xl:text-xl xl:leading-[30px]">
+                {{stamp.services.title}}
+              </h3>
+              <ul class="programs flex items-center gap-7 xl:gap-4">
+                {% for program in stamp.services.programs %}
+                <li>
+                  <picture>
+                    <source
+                      srcset="
+                        ./assets/images/modules/{{program}}-desktop.webp    1x,
+                        ./assets/images/modules/{{program}}-desktop@2x.webp 2x
+                      "
+                      media="(min-width: 1280px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./assets/images/modules/{{program}}-desktop.png    1x,
+                        ./assets/images/modules/{{program}}-desktop@2x.png 2x
+                      "
+                      media="(min-width: 1280px)"
+                      type="image/png"
+                    />
+                    <source
+                      srcset="
+                        ./assets/images/modules/{{program}}-mobile.webp    1x,
+                        ./assets/images/modules/{{program}}-mobile@2x.webp 2x
+                      "
+                      media="(max-width: 1279px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./assets/images/modules/{{program}}-mobile.png    1x,
+                        ./assets/images/modules/{{program}}-mobile@2x.png 2x
+                      "
+                      media="(max-width: 1279px)"
+                      type="image/png"
+                    />
+
+                    <img src="./assets/images/modules/{{program}}-mobile.png"
+                    alt="{{section.programAlt}}{{program}}" class="{{program}}" height="48" {% if
+                    program === 'wix' %} width="87" {% else %} width="48" {% endif%}
+                    loading="lazy"/>
+                  </picture>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </div>
+</section>

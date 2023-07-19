@@ -1,0 +1,287 @@
+.result .result-text {
+  & span {
+    font-weight: 700;
+  }
+
+  & span.block {
+    font-weight: 400;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 56px;
+    height: 56px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include mq(mobile-only) {
+      transform: translateY(-50%);
+    }
+
+    @include mq(tablet) {
+      background-position: left bottom;
+      position: static;
+      margin-bottom: 12px;
+      height: 48px;
+    }
+
+    @include mq(desktop) {
+      height: 56px;
+      width: 62px;
+    }
+  }
+}
+
+.result .technologies {
+  @include mq(tablet) {
+    width: 190px;
+  }
+
+  @include mq(desktop) {
+    width: 274px;
+  }
+
+  &::before {
+    background-size: 56px 48px;
+    background-image: url('../images/result/victory.svg');
+
+    @include mq(tablet) {
+      background-size: 29px 48px;
+    }
+
+    @include mq(desktop) {
+      background-size: 33px 56px;
+    }
+  }
+}
+
+.result .development {
+  @include mq(tablet) {
+    width: 197px;
+  }
+
+  @include mq(desktop) {
+    width: 254px;
+  }
+
+  &::before {
+    background-size: 56px 48px;
+    background-image: url('../images/result/money-mobile.png');
+
+    @include mq(retina) {
+      background-image: url('../images/result/money-mobile@2x.png');
+    }
+
+    @supports (background-image: url('../images/result/money-mobile.webp')) {
+      background-image: url('../images/result/money-mobile.webp');
+      @include mq(retina) {
+        background-image: url('../images/result/money-mobile@2x.webp');
+      }
+    }
+
+    @include mq(desktop) {
+      background-image: url('../images/result/money-desktop.png');
+      background-size: 56px 56px;
+
+      @include mq(retina) {
+        background-image: url('../images/result/money-desktop@2x.png');
+      }
+
+      @supports (background-image: url('../images/result/money-desktop.webp')) {
+        background-image: url('../images/result/money-desktop.webp');
+        @include mq(retina) {
+          background-image: url('../images/result/money-desktop@2x.webp');
+        }
+      }
+    }
+  }
+}
+
+.result .communication {
+  @include mq(tablet) {
+    width: 220px;
+  }
+
+  @include mq(desktop) {
+    width: 280px;
+  }
+
+  &::before {
+    background-size: 56px 50px;
+    background-image: url('../images/result/comment.svg');
+
+    @include mq(tablet) {
+      background-size: 54px 48px;
+    }
+
+    @include mq(desktop) {
+      background-size: 62px 56px;
+    }
+  }
+}
+
+.result .creativity {
+  @include mq(tablet) {
+    width: 270px;
+  }
+
+  @include mq(desktop) {
+    width: 280px;
+  }
+
+  &::before {
+    background-size: 56px 48px;
+    background-image: url('../images/result/contract.svg');
+
+    @include mq(tablet) {
+      background-size: 48px 48px;
+    }
+
+    @include mq(desktop) {
+      background-size: 56px 56px;
+    }
+  }
+}
+
+.result .presentation {
+  @include mq(tablet) {
+    width: 190px;
+  }
+
+  @include mq(desktop) {
+    width: 280px;
+  }
+
+  &::before {
+    background-size: 56px 56px;
+    background-image: url('../images/result/speaker.svg');
+
+    @include mq(tablet) {
+      background-size: 48px 48px;
+    }
+
+    @include mq(desktop) {
+      background-size: 56px 56px;
+    }
+  }
+}
+
+.result .cooperation {
+  @include mq(tablet) {
+    width: 190px;
+  }
+
+  @include mq(desktop) {
+    width: 240px;
+  }
+
+  &::before {
+    background-size: 56px 35px;
+    background-image: url('../images/result/handshake.svg');
+
+    @include mq(tablet) {
+      background-size: 48px 30px;
+    }
+
+    @include mq(desktop) {
+      background-size: 59px 35px;
+    }
+  }
+}
+
+.result .summary-text {
+  & span {
+    color: #aa43a2;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 118px;
+    height: 118px;
+    background-image: url('../images/result/student-mobile.png');
+    background-size: contain;
+
+    @include mq(retina) {
+      background-image: url('../images/result/student-mobile@2x.png');
+    }
+
+    @supports (background-image: url('../images/result/student-mobile.webp')) {
+      background-image: url('../images/result/student-mobile.webp');
+      @include mq(retina) {
+        background-image: url('../images/result/student-mobile@2x.webp');
+      }
+    }
+
+    @include mq(tablet) {
+      bottom: 50%;
+      right: 20px;
+      transform: translateY(50%);
+    }
+
+    @include mq(desktop) {
+      right: 32px;
+      background-image: url('../images/result/student-desktop.png');
+      width: 130px;
+      height: 130px;
+
+      @include mq(retina) {
+        background-image: url('../images/result/student-desktop@2x.png');
+      }
+
+      @supports (background-image: url('../images/result/student-desktop.webp')) {
+        background-image: url('../images/result/student-desktop.webp');
+        @include mq(retina) {
+          background-image: url('../images/result/student-desktop@2x.webp');
+        }
+      }
+    }
+  }
+}
+
+.result .result-list {
+  @include mq(desktop) {
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 487px;
+      height: 560px;
+      top: 0;
+      left: -560px;
+      border-radius: 24px;
+      background-color: #fec830;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 460px;
+      height: 560px;
+      top: 0;
+      left: -501px;
+      background-image: url('../images/result/girl-student.png');
+      background-size: contain;
+
+      @include mq(retina) {
+        background-image: url('../images/result/girl-student@2x.png');
+      }
+
+      @supports (background-image: url('../images/result/girl-student.webp')) {
+        background-image: url('../images/result/girl-student.webp');
+        @include mq(retina) {
+          background-image: url('../images/result/girl-student@2x.webp');
+        }
+      }
+    }
+  }
+}

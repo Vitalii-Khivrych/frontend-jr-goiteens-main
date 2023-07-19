@@ -1,0 +1,130 @@
+.profession-item:first-child .profession-text {
+  @include mq(tablet) {
+    width: 592px;
+  }
+}
+
+.profession-item:last-child .profession-text {
+  @include mq(tablet) {
+    width: 488px;
+    margin-left: auto;
+  }
+}
+
+.profession-item:not(:last-child) {
+  @include mq(mobile-only) {
+    margin-bottom: 108px;
+  }
+
+  @include mq(tablet-only) {
+    margin-bottom: 57px;
+  }
+}
+
+.profession-text::before {
+  content: '';
+  position: absolute;
+  top: -84px;
+  left: 0;
+  width: 72px;
+  height: 72px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 72px;
+
+  @include mq(tablet) {
+    top: 0;
+    width: 90px;
+    height: 90px;
+    background-size: 90px;
+  }
+}
+
+.profession-item:nth-child(1) .profession-text::before {
+  background-image: url(../images/profession/computer-mob.png);
+
+  @include mq(retina) {
+    background-image: url(../images/profession/computer-mob@2x.png);
+  }
+
+  @supports (background-image: url(../images/profession/computer-mob.webp)) {
+    background-image: url(../images/profession/computer-mob.webp);
+    @include mq(retina) {
+      background-image: url(../images/profession/computer-mob@2x.webp);
+    }
+  }
+
+  @include mq(tablet) {
+    background-image: url(../images/profession/computer-tab.png);
+
+    @include mq(retina) {
+      background-image: url(../images/profession/computer-tab@2x.png);
+    }
+
+    @supports (background-image: url(../images/profession/computer-tab.webp)) {
+      background-image: url(../images/profession/computer-tab.webp);
+      @include mq(retina) {
+        background-image: url(../images/profession/computer-tab@2x.webp);
+      }
+    }
+  }
+}
+
+.profession-item:nth-child(2) .profession-text::before {
+  background-image: url(../images/profession/money-mob.png);
+
+  @include mq(retina) {
+    background-image: url(../images/profession/money-mob@2x.png);
+  }
+
+  @supports (background-image: url(../images/profession/money-mob.webp)) {
+    background-image: url(../images/profession/money-mob.webp);
+    @include mq(retina) {
+      background-image: url(../images/profession/money-mob@2x.webp);
+    }
+  }
+
+  @include mq(tablet) {
+    top: -17px;
+    background-image: url(../images/profession/money-tab.png);
+
+    @include mq(retina) {
+      background-image: url(../images/profession/money-tab@2x.png);
+    }
+
+    @supports (background-image: url(../images/profession/money-tab.webp)) {
+      background-image: url(../images/profession/money-tab.webp);
+      @include mq(retina) {
+        background-image: url(../images/profession/money-tab@2x.webp);
+      }
+    }
+  }
+}
+
+.profession-item:nth-child(2) .profession-text::after {
+  content: '';
+  position: absolute;
+  top: -44px;
+  left: 104px;
+  width: 84px;
+  height: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(../images/profession/arrow-mob.svg);
+
+  @include mq(tablet) {
+    top: -49px;
+    left: -140px;
+    width: 90px;
+    height: 90px;
+    background-image: url(../images/profession/arrow-tab.svg);
+  }
+
+  @include mq(desktop) {
+    top: 49px;
+    left: -116px;
+    width: 96px;
+    height: 24px;
+    background-image: url(../images/profession/arrow-desk.svg);
+  }
+}

@@ -1,0 +1,51 @@
+{% set section = howWeTeach %}
+
+<section class="section how-we-teach">
+  <div class="how-we-teach-wrapper">
+    <div class="container py-10 md:py-[60px] xl:py-[80px]">
+      <h2
+        class="section-title how-we-teach-title mb-6 text-white md:mb-6 xl:mb-8 smOnly:mx-auto smOnly:w-[184px]"
+      >
+        {{section.title}}
+      </h2>
+      <p
+        class="mb-4 text-center text-sm uppercase text-white md:mb-6 md:text-base xl:mb-8 xl:text-lg mdOnly:mx-auto mdOnly:w-[477px]"
+      >
+        {{section.description}}
+      </p>
+      <ul class="mb-4 flex flex-wrap justify-center gap-x-5 gap-y-4 md:mb-6 md:gap-x-4 xl:mb-8">
+        {% for company in section.companies %}
+        <li
+          class="flex h-10 w-[calc((100%-20px)/2)] items-center justify-center rounded-[10px] border border-[#ffffff1a] bg-[#302C3B] md:h-[50px] md:w-[161px]"
+        >
+          <svg
+            width="68"
+            height="24"
+            class="{{company}}"
+            aria-label="{{section.companyAria}}{{company}}"
+          >
+            <use href="./assets/images/sprite.svg#{{company}}"></use>
+          </svg>
+        </li>
+        {% endfor %}
+      </ul>
+      <p
+        class="text-center text-sm font-medium text-white md:mx-auto md:w-[493px] md:text-base xl:w-[555px] xl:text-lg"
+      >
+        {{section.overview}}
+      </p>
+    </div>
+  </div>
+  <div class="container pt-10 md:pt-[60px] xl:pt-[80px]">
+    <ul class="flex flex-col justify-center gap-5 md:flex-row md:gap-8 xl:gap-[66px]">
+      {% for feature in section.features %}
+      <li class="feature-item">
+        <h3 class="mb-3 text-center font-bold uppercase xl:text-lg">{{feature.title}}</h3>
+        <p class="text-center xl:w-[284px] xl:text-lg smOnly:mx-auto smOnly:w-[69%]">
+          {{feature.text}}
+        </p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

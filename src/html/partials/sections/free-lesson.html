@@ -1,0 +1,31 @@
+{% set section = freeLesson %}
+
+<section class="{{section.id}} section">
+  <div class="container">
+    <h2 class="section-title mb-4 md:mb-6 xl:mb-8">{{section.title}}</h2>
+    <p
+      class="mb-[122px] text-center text-base font-bold uppercase md:mb-[138px] xl:mb-[129px] xl:text-lg"
+    >
+      {{section.subtitle}}
+    </p>
+    <ul
+      class="mb-6 md:mb-10 md:grid md:grid-cols-2 md:gap-x-[68px] xl:mb-[35px] xl:grid-cols-4 xl:gap-x-8 mdOnly:gap-y-[138px]"
+    >
+      {% for item in section.list %}
+      <li class="free-lesson-item">
+        <h3 class="free-lesson-item-text relative text-center text-lg font-bold">{{item.text}}</h3>
+      </li>
+      {% endfor %}
+    </ul>
+    <p class="mb-6 text-center text-sm font-medium md:mb-10 md:text-base xl:text-lg">
+      {{section.text}}
+    </p>
+    <button
+      type="button"
+      data-modal-open
+      class="btn mx-auto h-[56px] w-[280px] md:h-[72px] md:w-[336px] xl:h-[56px] xl:w-[438px]"
+    >
+      {{section.button}}
+    </button>
+  </div>
+</section>

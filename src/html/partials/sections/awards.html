@@ -1,0 +1,44 @@
+{% set section = awards %}
+<section class="section {{section.id}}" id="{{section.id}}">
+  <div class="container">
+    <h2 class="section-title mb-6 md:mb-10 xl:mb-[60px]">{{section.title}}</h2>
+    <ul class="flex flex-col smOnly:items-center md:flex-row gap-8 md:gap-[49px] xl:gap-[153px]">
+      {% for item in section.cards %}
+      <li class="max-w-[202px] xl:max-w-[303px] smOnly:text-center text-white">
+        <div
+          class="w-[202px] h-[180px] xl:w-[303px] xl:h-[270px] mb-4 xl:mb-10 flex items-center justify-center rounded-xl bg-white shadow-card"
+        >
+          <div class="">
+            <picture>
+              <source
+                srcset="
+                  ./assets/images/awards/{{item.img.name}}.webp    1x,
+                  ./assets/images/awards/{{item.img.name}}@2x.webp 2x
+                "
+                type="image/webp"
+              />
+              <source
+                srcset="
+                  ./assets/images/awards/{{item.img.name}}.png    1x,
+                  ./assets/images/awards/{{item.img.name}}@2x.png 2x
+                "
+                type="image/png"
+              />
+              <img
+                src="./assets/images/awards/{{item.img.name}}.png"
+                width="{{item.img.width}}"
+                height="{{item.img.height}}"
+                alt="{{item.img.alt}}"
+                loading="lazy"
+                class="xl:w-[100%] xl:h-[80%] block"
+              />
+            </picture>
+          </div>
+        </div>
+        <h3 class="mb-2 xl:text-[20px] xl:leading-[30px] font-medium">{{item.title}}</h3>
+        <p class="text-sm xl:text-lg">{{item.description}}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

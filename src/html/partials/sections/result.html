@@ -1,0 +1,26 @@
+{% set section = result %}
+<section class="section result">
+  <div class="container">
+    <h2 class="section-title mb-6 md:mb-10 xl:mb-[60px] xl:leading-[36px]">{{section.title}}</h2>
+    <ul
+      class="result-list mb-10 ml-auto flex flex-col gap-6 md:flex-row md:flex-wrap md:gap-x-[85px] md:gap-y-8 xl:relative xl:mb-[72px] xl:w-[655px] xl:gap-x-[95px]"
+    >
+      {% for result in section.results %}
+      <li
+        class="relative flex flex-col justify-center md:w-[280px] md:justify-start smOnly:min-h-[56px]"
+      >
+        <p class="{{result.class}} result-text pl-[74px] text-sm md:pl-0 xl:text-lg font-medium">
+          {{result.text}}
+        </p>
+      </li>
+      {% endfor %}
+    </ul>
+    <div
+      class="relative rounded-3xl border border-dashed border-accent bg-second p-5 pb-[160px] md:pb-5 md:pr-[154px] xl:py-10 xl:pl-8 xl:pr-[202px]"
+    >
+      <p class="summary-text text-center font-bold uppercase md:text-left xl:text-lg">
+        {{section.summary}}
+      </p>
+    </div>
+  </div>
+</section>

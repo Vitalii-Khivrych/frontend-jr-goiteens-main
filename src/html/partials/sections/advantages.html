@@ -1,0 +1,22 @@
+{% set section = advantages %}
+
+<section class="{{section.id}} section">
+  <div class="container">
+    <h2 class="section-title mb-6 text-center md:mb-10 xl:mx-auto xl:mb-[60px] xl:w-[835px]">
+      {{section.title}}
+    </h2>
+    <ul
+      class="text-center text-base font-medium md:flex md:flex-wrap md:justify-center md:gap-8 xl:text-lg"
+    >
+      {% for item in section.list %}
+
+      <li
+        class="advantages-item rounded-card bg-accent px-7 pb-5 pt-[108px] shadow-card even:bg-button even:text-white md:w-[336px] md:px-[45px] md:pb-6 md:pt-[116px] md:even:px-20 xl:w-[384px] xl:px-[54px] xl:pt-[140px] xl:even:px-[92px] smOnly:mb-6 smOnly:last:mb-0"
+      >
+        {{item}}
+      </li>
+
+      {% endfor %}
+    </ul>
+  </div>
+</section>

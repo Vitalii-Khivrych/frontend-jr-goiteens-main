@@ -1,0 +1,35 @@
+{% set section = formula %}
+
+<section class="section smOnly:bg-white">
+  <div class="container">
+    <h2 class="section-title mb-[76px] md:mb-[80px] xl:mb-[112px]">{{section.title}}</h2>
+    <ul
+      class="formula-list relative mb-10 flex flex-col gap-[76px] md:mb-[56px] md:flex-row md:items-end md:gap-4 xl:mb-[92px] xl:gap-8"
+    >
+      {% for stage in section.stages %}
+      <li
+        class="relative h-[222px] rounded-3xl px-3 pb-6 pt-[62px] shadow-card even:bg-accent md:h-[216px] md:w-[224px] md:px-0 md:pt-[48px] even:md:h-[244px] xl:h-[224px] xl:w-[384px] xl:px-5 xl:pt-[60px] even:xl:h-[274px]"
+      >
+        <div
+          class="formula-number-wrapper absolute right-2/4 top-[-53px] h-[106px] w-[106px] translate-x-[50%] rounded-full bg-white mdOnly:top-[-40px] mdOnly:h-[80px] mdOnly:w-[80px]"
+        >
+          <p
+            class="absolute right-2/4 top-2/4 flex h-[76px] w-[76px] translate-x-[50%] translate-y-[-50%] items-center justify-center rounded-full bg-accent text-4xl font-bold leading-[52px] mdOnly:h-[58px] mdOnly:w-[58px] mdOnly:text-[28px]"
+          >
+            {{stage.number}}
+          </p>
+        </div>
+        <h3 class="mb-4 text-center font-bold uppercase xl:mb-3 xl:text-lg">{{stage.title}}</h3>
+        <p class="text-center md:text-sm xl:text-lg">{{stage.text}}</p>
+      </li>
+      {% endfor %}
+    </ul>
+    <div
+      class="relative rounded-3xl border border-dashed border-accent bg-second p-5 pb-[146px] md:py-[41px] md:pl-[148px] md:pr-[24px] xl:py-[52px] xl:pl-[304px] xl:pr-[118px]"
+    >
+      <p class="formula-overview text-center font-bold uppercase md:text-left xl:text-lg">
+        {{section.overview}}
+      </p>
+    </div>
+  </div>
+</section>

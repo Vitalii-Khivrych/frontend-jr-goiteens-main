@@ -1,0 +1,75 @@
+.formula-number-wrapper {
+  background-image: linear-gradient(180deg, #fffcf5 0%, #fffcf5 50%, rgba(0, 0, 0, 0) 50%),
+    radial-gradient(70.71% 70.71% at 50% 50%, #fffcf5 65%, #5c2e91 100%);
+}
+
+.formula-list::after {
+  @include mq(tablet) {
+    content: '';
+    width: 59px;
+    height: 56px;
+    display: block;
+    position: absolute;
+    bottom: -16px;
+    right: 50%;
+    transform: translateX(50%);
+    background-image: url('../images/formula/hand-pointer.svg');
+    background-size: cover;
+  }
+
+  @include mq(desktop) {
+    width: 75px;
+    height: 70px;
+    bottom: -32px;
+  }
+}
+
+.formula-overview::after {
+  content: '';
+  width: 100px;
+  height: 106px;
+  display: block;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: url('../images/formula/memoji-in-glasses-mobile.png');
+  background-size: cover;
+
+  @include mq(retina) {
+    background-image: url('../images/formula/memoji-in-glasses-mobile@2x.png');
+  }
+
+  @supports (background-image: url('../images/formula/memoji-in-glasses-mobile.webp')) {
+    background-image: url('../images/formula/memoji-in-glasses-mobile.webp');
+
+    @include mq(retina) {
+      background-image: url('../images/formula/memoji-in-glasses-mobile@2x.webp');
+    }
+  }
+
+  @include mq(tablet) {
+    bottom: 50%;
+    transform: translateY(50%);
+    left: 24px;
+  }
+
+  @include mq(desktop) {
+    width: 118px;
+    height: 126px;
+    left: 96px;
+    background-image: url('../images/formula/memoji-in-glasses-desktop.png');
+
+    @include mq(retina) {
+      background-image: url('../images/formula/memoji-in-glasses-desktop@2x.png');
+    }
+
+    @supports (background-image: url('../images/formula/memoji-in-glasses-desktop.webp')) {
+      background-image: url('../images/formula/memoji-in-glasses-desktop.webp');
+
+      @include mq(retina) {
+        background-image: url('../images/formula/memoji-in-glasses-desktop@2x.webp');
+      }
+    }
+  }
+}

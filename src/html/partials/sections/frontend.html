@@ -1,0 +1,20 @@
+{% set section = frontend %}
+
+<section class="section {{section.id}}" id="{{section.id}}">
+  <div class="container">
+    <h2 class="section-title text-center mb-[60px] md:mb-[72px] xl:mb-[104px]">
+      {{frontend.title}}
+    </h2>
+    <ul
+      class="card-list flex flex-col gap-[60px] md:flex-row md:flex-wrap md:gap-x-8 md:gap-y-[52px] justify-center"
+    >
+      {% for card in section.cards %}
+      <li
+        class="card rounded-3xl shadow-card h-[128px] md:w-[336px] xl:w-[384px] xl:h-[154px] text-sm px-[35px] pt-[48px] md:px-[35px] md:pt-[56px] md:pb-[32px] xl:px-5 xl:pt-[66px] pb-[20px] before:content-[''] before:absolute before:w-[72px] before:h-[72px] xl:before:w-[90px] xl:before:h-[90px] before:left-[50%] before:top-[0] before:-translate-y-2/4 before:-translate-x-2/4 before:bg-cover text-center font-medium xl:text-lg"
+      >
+        {{card.title}}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,83 @@
+.free-lesson-item:not(:last-child) {
+  @include mq(mobile-only) {
+    margin-bottom: 122px;
+  }
+}
+
+.free-lesson-item-text::before {
+  content: '';
+  position: absolute;
+  top: -98px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 74px;
+  height: 74px;
+  background-color: #f2f2f3;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 74px;
+}
+
+.free-lesson-item:nth-child(1) .free-lesson-item-text::before {
+  background-size: 51px 31px;
+  background-image: url(../images/free-lesson/hands.png);
+
+  @include mq(retina) {
+    background-image: url(../images/free-lesson/hands@2x.png);
+  }
+
+  @supports (background-image: url(../images/free-lesson/hands.webp)) {
+    background-image: url(../images/free-lesson/hands.webp);
+    @include mq(retina) {
+      background-image: url(../images/free-lesson/hands@2x.webp);
+    }
+  }
+}
+
+.free-lesson-item:nth-child(2) .free-lesson-item-text::before {
+  background-size: 52px 52px;
+  background-image: url(../images/free-lesson/hacker.png);
+
+  @include mq(retina) {
+    background-image: url(../images/free-lesson/hacker@2x.png);
+  }
+
+  @supports (background-image: url(../images/free-lesson/hacker.webp)) {
+    background-image: url(../images/free-lesson/hacker.webp);
+    @include mq(retina) {
+      background-image: url(../images/free-lesson/hacker@2x.webp);
+    }
+  }
+}
+
+.free-lesson-item:nth-child(3) .free-lesson-item-text::before {
+  background-size: 50px 50px;
+  background-image: url(../images/free-lesson/heart.png);
+
+  @include mq(retina) {
+    background-image: url(../images/free-lesson/heart@2x.png);
+  }
+
+  @supports (background-image: url(../images/free-lesson/heart.webp)) {
+    background-image: url(../images/free-lesson/heart.webp);
+    @include mq(retina) {
+      background-image: url(../images/free-lesson/heart@2x.webp);
+    }
+  }
+}
+
+.free-lesson-item:nth-child(4) .free-lesson-item-text::before {
+  background-size: 50px 50px;
+  background-image: url(../images/free-lesson/thumb-up.png);
+
+  @include mq(retina) {
+    background-image: url(../images/free-lesson/thumb-up@2x.png);
+  }
+
+  @supports (background-image: url(../images/free-lesson/thumb-up.webp)) {
+    background-image: url(../images/free-lesson/thumb-up.webp);
+    @include mq(retina) {
+      background-image: url(../images/free-lesson/thumb-up@2x.webp);
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.awards {
+  background: url('../images/awards/bg-wave.svg'), url('../images/awards/background.png');
+  background-position: -300%, 45% 180px;
+  background-repeat: no-repeat;
+
+  @include mq(tablet) {
+    background-size: 100%, cover;
+    background-position: center, center 180px;
+  }
+
+  @include mq(desktop) {
+    background-size: 100%, cover;
+    background-position: center, center 260px;
+  }
+
+  @include mq(retina) {
+    background-image: url('../images/awards/bg-wave.svg'), url('../images/awards/background@2x.png');
+  }
+  @supports (
+    background-image: url('../images/awards/bg-wave.svg'),
+    url('../images/awards/background.webp')
+  ) {
+    background-image: url('../images/awards/bg-wave.svg'), url('../images/awards/background.webp');
+    @include mq(retina) {
+      background-image: url('../images/awards/bg-wave.svg'),
+        url('../images/awards/background@2x.webp');
+    }
+  }
+}

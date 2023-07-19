@@ -1,0 +1,49 @@
+.frontend {
+  .card {
+    position: relative;
+    &:first-child {
+      &::before {
+        background-image: url('../images/frontend/boy-with-desktop.png');
+        @include mq(retina) {
+          background-image: url('../images/frontend/boy-with-desktop@2x.png');
+        }
+        @supports (background-image: url('../images/frontend/boy-with-desktop.webp')) {
+          background-image: url('../images/frontend/boy-with-desktop.webp');
+          @include mq(retina) {
+            background-image: url('../images/frontend/boy-with-desktop@2x.webp');
+          }
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      &::before {
+        background-image: url('../images/frontend/girl.png');
+        @include mq(retina) {
+          background-image: url('../images/frontend/girl@2x.png');
+        }
+        @supports (background-image: url('../images/frontend/girl.webp')) {
+          background-image: url('../images/frontend/girl.webp');
+          @include mq(retina) {
+            background-image: url('../images/frontend/girl@2x.webp');
+          }
+        }
+      }
+    }
+
+    &:last-child {
+      &::before {
+        background-image: url('../images/frontend/boy.png');
+        @include mq(retina) {
+          background-image: url('../images/frontend/boy@2x.png');
+        }
+        @supports (background-image: url('../images/frontend/boy.webp')) {
+          background-image: url('../images/frontend/boy.webp');
+          @include mq(retina) {
+            background-image: url('../images/frontend/boy@2x.webp');
+          }
+        }
+      }
+    }
+  }
+}

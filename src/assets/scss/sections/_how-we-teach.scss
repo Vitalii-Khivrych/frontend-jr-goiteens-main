@@ -1,0 +1,64 @@
+.how-we-teach {
+  padding-top: 0;
+}
+
+.how-we-teach-wrapper {
+  background-image: url('../images/how-we-teach/how-we-teach-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  @include mq(retina) {
+    background-image: url('../images/how-we-teach/how-we-teach-bg@2x.png');
+  }
+
+  @supports (background-image: url('../images/how-we-teach/how-we-teach-bg.webp')) {
+    background-image: url('../images/how-we-teach/how-we-teach-bg.webp');
+
+    @include mq(retina) {
+      background-image: url('../images/how-we-teach/how-we-teach-bg@2x.webp');
+    }
+  }
+}
+
+.how-we-teach-title span {
+  color: #fec830;
+}
+
+.how-we-teach .feature-item:not(:last-child) {
+  padding-bottom: 20px;
+  border-bottom: 2px dashed #fec830;
+
+  @include mq(tablet) {
+    padding-bottom: 0px;
+    padding-right: 32px;
+    border-bottom: 0;
+    border-right: 2px dashed #fec830;
+  }
+
+  @include mq(desktop) {
+    padding-right: 66px;
+  }
+}
+
+@include mq(tablet) {
+  .microsoft {
+    width: 84px;
+    height: 18px;
+  }
+
+  .google {
+    width: 80px;
+    height: 27px;
+  }
+
+  .apple {
+    width: 24px;
+    height: 30px;
+  }
+
+  .amazon {
+    width: 80px;
+    height: 24px;
+  }
+}

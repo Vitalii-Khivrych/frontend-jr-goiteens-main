@@ -1,0 +1,149 @@
+.schedule-section {
+  @include mq(desktop) {
+    background-repeat: no-repeat;
+    background-size: 546px 456px;
+    background-position: top 174px left calc((100vw - 1280px) / 2 + 864px);
+    background-image: url(../images/schedule/programmer.png);
+
+    @include mq(retina) {
+      background-image: url(../images/schedule/programmer@2x.png);
+    }
+
+    @supports (background-image: url(../images/schedule/programmer.webp)) {
+      background-image: url(../images/schedule/programmer.webp);
+      @include mq(retina) {
+        background-image: url(../images/schedule/programmer@2x.webp);
+      }
+    }
+  }
+}
+
+.schedule-section::after {
+  @include mq(desktop) {
+    content: '';
+    position: absolute;
+    top: 226px;
+    right: -67px;
+    width: 134px;
+    height: 258px;
+    border-radius: 258px;
+    background-color: #fec830;
+    filter: blur(150px);
+  }
+}
+
+.schedule-item:not(:last-child) {
+  margin-bottom: 24px;
+
+  @include mq(tablet) {
+    margin-bottom: 40px;
+  }
+
+  @include mq(desktop) {
+    margin-bottom: 60px;
+  }
+}
+
+.schedule-el::before {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin-right: 16px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  @include mq(tablet) {
+    width: 56px;
+    height: 56px;
+    margin-right: 20px;
+  }
+
+  @include mq(desktop) {
+    margin-right: 24px;
+  }
+}
+
+.schedule-item:nth-child(1) .schedule-el::before {
+  background-image: url(../images/schedule/calendar-mob.png);
+
+  @include mq(retina) {
+    background-image: url(../images/schedule/calendar-mob@2x.png);
+  }
+
+  @supports (background-image: url(../images/schedule/calendar-mob.webp)) {
+    background-image: url(../images/schedule/calendar-mob.webp);
+    @include mq(retina) {
+      background-image: url(../images/schedule/calendar-mob@2x.webp);
+    }
+  }
+
+  @include mq(tablet) {
+    background-image: url(../images/schedule/calendar-tab.png);
+
+    @include mq(retina) {
+      background-image: url(../images/schedule/calendar-tab@2x.png);
+    }
+
+    @supports (background-image: url(../images/schedule/calendar-tab.webp)) {
+      background-image: url(../images/schedule/calendar-tab.webp);
+      @include mq(retina) {
+        background-image: url(../images/schedule/calendar-tab@2x.webp);
+      }
+    }
+  }
+}
+
+.schedule-item:nth-child(2) .schedule-el::before {
+  background-image: url(../images/schedule/clock-mob.png);
+
+  @include mq(retina) {
+    background-image: url(../images/schedule/clock-mob@2x.png);
+  }
+
+  @supports (background-image: url(../images/schedule/clock-mob.webp)) {
+    background-image: url(../images/schedule/clock-mob.webp);
+    @include mq(retina) {
+      background-image: url(../images/schedule/clock-mob@2x.webp);
+    }
+  }
+
+  @include mq(tablet) {
+    background-image: url(../images/schedule/clock-tab.png);
+
+    @include mq(retina) {
+      background-image: url(../images/schedule/clock-tab@2x.png);
+    }
+
+    @supports (background-image: url(../images/schedule/clock-tab.webp)) {
+      background-image: url(../images/schedule/clock-tab.webp);
+      @include mq(retina) {
+        background-image: url(../images/schedule/clock-tab@2x.webp);
+      }
+    }
+  }
+
+  @include mq(desktop) {
+    width: 70px;
+    height: 70px;
+    background-image: url(../images/schedule/clock-desk.png);
+
+    @include mq(retina) {
+      background-image: url(../images/schedule/clock-desk@2x.png);
+    }
+
+    @supports (background-image: url(../images/schedule/clock-desk.webp)) {
+      background-image: url(../images/schedule/clock-desk.webp);
+      @include mq(retina) {
+        background-image: url(../images/schedule/clock-desk@2x.webp);
+      }
+    }
+  }
+}
+
+.schedule-el:not(:last-child) {
+  @include mq(mobile-only) {
+    margin-bottom: 16px;
+  }
+}

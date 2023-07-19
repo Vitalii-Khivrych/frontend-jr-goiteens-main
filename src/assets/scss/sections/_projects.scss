@@ -1,0 +1,77 @@
+.projects-section {
+  background-repeat: no-repeat;
+  background-position: bottom 0 left 0;
+  background-size: 100% 65%;
+  background-image: url(../images/projects/projects-bg-mob.png);
+
+  @include mq(retina) {
+    background-image: url(../images/projects/projects-bg-mob@2x.png);
+  }
+
+  @supports (background-image: url(../images/projects/projects-bg-mob.webp)) {
+    background-image: url(../images/projects/projects-bg-mob.webp);
+    @include mq(retina) {
+      background-image: url(../images/projects/projects-bg-mob@2x.webp);
+    }
+  }
+
+  @include mq(tablet) {
+    background-size: 100% 52%;
+    background-image: url(../images/projects/projects-bg-tab.png);
+
+    @include mq(retina) {
+      background-image: url(../images/projects/projects-bg-tab@2x.png);
+    }
+
+    @supports (background-image: url(../images/projects/projects-bg-tab.webp)) {
+      background-image: url(../images/projects/projects-bg-tab.webp);
+      @include mq(retina) {
+        background-image: url(../images/projects/projects-bg-tab@2x.webp);
+      }
+    }
+  }
+
+  @include mq(desktop) {
+    background-size: 100% 57%;
+    background-image: url(../images/projects/projects-bg-desk.png);
+
+    @include mq(retina) {
+      background-image: url(../images/projects/projects-bg-desk@2x.png);
+    }
+
+    @supports (background-image: url(../images/projects/projects-bg-desk.webp)) {
+      background-image: url(../images/projects/projects-bg-desk.webp);
+      @include mq(retina) {
+        background-image: url(../images/projects/projects-bg-desk@2x.webp);
+      }
+    }
+  }
+}
+
+/*! purgecss start ignore */
+.projects-slider {
+  .slick-dots {
+    li {
+      button {
+        background-color: #ffff !important;
+      }
+      &.slick-active button {
+        background-color: #ffff !important;
+      }
+    }
+  }
+
+  &.slick-dotted.slick-slider {
+    padding-bottom: 34px;
+    @include mq(tablet) {
+      padding-bottom: 30px !important;
+    }
+  }
+
+  .slick-slide {
+    @media (min-width: 768px) {
+      margin: 0 8px !important;
+    }
+  }
+}
+/*! purgecss end ignore */

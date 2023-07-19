@@ -1,0 +1,146 @@
+.lesson-item {
+  position: relative;
+
+  &::before,
+  &::after {
+    display: block;
+    position: absolute;
+    content: '';
+    left: 50%;
+
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+  }
+
+  &::before {
+    width: 106px;
+    height: 106px;
+    top: -106px;
+    transform: translate(-50%, 50%);
+
+    background: linear-gradient(180deg, #fffcf5 0%, #fffcf5 50%, rgba(0, 0, 0, 0) 50%),
+      radial-gradient(70.71% 70.71% at 50% 50%, #fffcf5 65%, #5c2e91 100%);
+    z-index: 1;
+  }
+  &::after {
+    width: 76px;
+    height: 76px;
+    top: -76px;
+    transform: translate(-50%, 50%);
+
+    background-color: #fec830;
+    box-shadow: 2px -2px 10px 0px rgba(92, 46, 145, 0.05), 4px 4px 10px 0px rgba(92, 46, 145, 0.08);
+
+    z-index: 2;
+  }
+
+  &:nth-child(1) {
+    &::after {
+      background-image: url(../images/lesson/lesson-image-1.svg);
+    }
+  }
+
+  &:nth-child(2) {
+    &::after {
+      background-position: center 20px;
+      background-image: url(../images/lesson/lesson-image-2.png);
+      @include mq(retina) {
+        background-size: 75%;
+        background-image: url(../images/lesson/lesson-image-2@2x.png);
+      }
+      @supports (background-image: url(../images/lesson/lesson-image-2.webp)) {
+        background-image: url(../images/lesson/lesson-image-2.webp);
+        @include mq(retina) {
+          background-size: 75%;
+          background-image: url(../images/lesson/lesson-image-2@2x.webp);
+        }
+      }
+    }
+  }
+  &:nth-child(3) {
+    &::after {
+      background-image: url(../images/lesson/lesson-image-3.png);
+      @include mq(retina) {
+        background-size: 75%;
+        background-image: url(../images/lesson/lesson-image-3@2x.png);
+      }
+      @supports (background-image: url(../images/lesson/lesson-image-3.webp)) {
+        background-image: url(../images/lesson/lesson-image-3.webp);
+        @include mq(retina) {
+          background-size: 75%;
+          background-image: url(../images/lesson/lesson-image-3@2x.webp);
+        }
+      }
+    }
+  }
+  &:nth-child(4) {
+    &::after {
+      background-image: url(../images/lesson/lesson-image-4.png);
+      @include mq(retina) {
+        background-size: 75%;
+        background-image: url(../images/lesson/lesson-image-4@2x.png);
+      }
+      @supports (background-image: url(../images/lesson/lesson-image-4.webp)) {
+        background-image: url(../images/lesson/lesson-image-4.webp);
+        @include mq(retina) {
+          background-size: 75%;
+          background-image: url(../images/lesson/lesson-image-4@2x.webp);
+        }
+      }
+    }
+  }
+}
+
+.lesson {
+  .container {
+    @include mq(tablet) {
+      position: relative;
+
+      &::before {
+        display: block;
+        position: absolute;
+        content: '';
+
+        width: 48px;
+        height: 80px;
+
+        left: 32px;
+        top: 371px - 60px;
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url(../images/lesson/bracket-left.svg);
+      }
+    }
+
+    @include mq(desktop) {
+      &::before {
+        width: 62px;
+        height: 102px;
+
+        left: -30px;
+        top: 354px - 80px;
+      }
+
+      &::after {
+        display: block;
+        position: absolute;
+        content: '';
+
+        width: 62px;
+        height: 102px;
+
+        right: -30px;
+        bottom: 140px - 80px;
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url(../images/lesson/bracket-right.svg);
+      }
+    }
+  }
+}

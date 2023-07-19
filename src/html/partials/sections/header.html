@@ -1,0 +1,77 @@
+{% set section = header %}
+<header class="{{section.id}} relative pb-10 md:pb-[140px] xl:pb-[108px] overflow-hidden">
+  <div class="container">
+    <div class="pt-6 md:pt-10 mb-[26px] md:mb-[58px] xl:mb-[80px]">
+      <a
+        class="logo block w-[150px] smOnly:mx-auto"
+        href="{{page.canonical}}"
+        aria-label="{{logo.link_logo_aria}}"
+        target="_blank"
+        rel="noopener nofollow noreferrer"
+      >
+        <svg width="150" height="46" aria-label="{{logo.logo_aria}}">
+          <title>{{logo.logo_aria}}</title>
+          <use href="./assets/images/sprite.svg#logo-black"></use>
+        </svg>
+      </a>
+    </div>
+    <div class="smOnly:text-center">
+      <p
+        class="label relative uppercase font-bold text-center max-w-[202px] px-[32px] text-white smOnly:mx-auto mb-6 md:mb-10 xl:mb-8 md:text-[20px] md:leading-[30px]"
+      >
+        {{header.age.text}}<br />
+        <span class="text-accent">{{header.age.accent}}</span>
+      </p>
+      <p
+        class="text-sm md:text-base uppercase font-bold text-accent mb-4 xl:mb-5 xl:text-[20px] xl:leading-[30px]"
+      >
+        {{header.subtitle}}
+      </p>
+      <h1
+        class="uppercase font-bold text-accent text-4xl mb-4 xl:mb-3 md:max-w-[300px] md:text-[48px] md:leading-[60px] xl:max-w-[461px] xl:text-[74px] xl:leading-[86px]"
+      >
+        {{header.title}}
+      </h1>
+      <p
+        class="text-white mb-10 md:max-w-[334px] xl:max-w-[487px] xl:text-[20px] xl:leading-[30px]"
+      >
+        {{header.description}}
+      </p>
+      <button
+        data-modal-open
+        type="button"
+        class="btn w-[280px] h-[56px] md:w-[336px] md:h-[72px] xl:w-[438px] xl:h-[56px] smOnly:mx-auto mdOnly:px-[30px]"
+      >
+        {{header.btn.text}}
+      </button>
+    </div>
+    <div
+      class="absolute hidden bottom-0 left-[50%] w-[504px] h-[538px] xl:w-[592px] xl:h-[628px] md:block"
+    >
+      <picture>
+        <source
+          srcset="
+            ./assets/images/header/boy-with-book.webp    1x,
+            ./assets/images/header/boy-with-book@2x.webp 2x
+          "
+          type="image/webp"
+        />
+        <source
+          srcset="
+            ./assets/images/header/boy-with-book.png    1x,
+            ./assets/images/header/boy-with-book@2x.png 2x
+          "
+          type="image/png"
+        />
+        <img
+          src="./assets/images/header/boy-with-book.png"
+          height="538"
+          width="504"
+          alt="{{header.image.alt}}"
+          loading="lazy"
+          class="w-full h-full"
+        />
+      </picture>
+    </div>
+  </div>
+</header>

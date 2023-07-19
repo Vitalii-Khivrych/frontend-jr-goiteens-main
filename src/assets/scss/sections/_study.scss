@@ -1,0 +1,18 @@
+.study-item {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(../images/study/ok-icon.svg);
+  }
+}

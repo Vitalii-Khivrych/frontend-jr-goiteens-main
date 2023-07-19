@@ -1,0 +1,149 @@
+.advantages-item {
+  position: relative;
+
+  &::before {
+    display: block;
+    position: absolute;
+    content: '';
+    width: 80px;
+    height: 80px;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &:nth-child(1) {
+    &::before {
+      background-image: url(../images/advantages/face-1.png);
+
+      @include mq(retina) {
+        background-image: url(../images/advantages/face-1@2x.png);
+      }
+
+      @supports (background-image: url(../images/advantages/face-1.webp)) {
+        background-image: url(../images/advantages/face-1.webp);
+
+        @include mq(retina) {
+          background-image: url(../images/advantages/face-1@2x.webp);
+        }
+      }
+    }
+
+    @include mq(desktop) {
+      &::before {
+        width: 104px;
+        height: 104px;
+        top: 24px;
+        background-image: url(../images/advantages/face-1-desk.png);
+
+        @include mq(retina) {
+          background-image: url(../images/advantages/face-1-desk@2x.png);
+        }
+
+        @supports (background-image: url(../images/advantages/face-1-desk.webp)) {
+          background-image: url(../images/advantages/face-1-desk.webp);
+
+          @include mq(retina) {
+            background-image: url(../images/advantages/face-1-desk@2x.webp);
+          }
+        }
+      }
+    }
+  }
+
+  &:nth-child(2) {
+    &::before {
+      background-image: url(../images/advantages/face-2.png);
+
+      @include mq(retina) {
+        background-image: url(../images/advantages/face-2@2x.png);
+      }
+
+      @supports (background-image: url(../images/advantages/face-2.webp)) {
+        background-image: url(../images/advantages/face-2.webp);
+
+        @include mq(retina) {
+          background-image: url(../images/advantages/face-2@2x.webp);
+        }
+      }
+    }
+
+    @include mq(desktop) {
+      &::before {
+        width: 104px;
+        height: 104px;
+        top: 24px;
+
+        background-image: url(../images/advantages/face-2-desk.png);
+        @include mq(retina) {
+          background-image: url(../images/advantages/face-2-desk@2x.png);
+        }
+        @supports (background-image: url(../images/advantages/face-2-desk.webp)) {
+          background-image: url(../images/advantages/face-2-desk.webp);
+          @include mq(retina) {
+            background-image: url(../images/advantages/face-2-desk@2x.webp);
+          }
+        }
+      }
+    }
+  }
+
+  &:nth-child(3) {
+    &::before {
+      background-image: url(../images/advantages/face-3.png);
+
+      @include mq(retina) {
+        background-image: url(../images/advantages/face-3@2x.png);
+      }
+
+      @supports (background-image: url(../images/advantages/face-3.webp)) {
+        background-image: url(../images/advantages/face-3.webp);
+
+        @include mq(retina) {
+          background-image: url(../images/advantages/face-3@2x.webp);
+        }
+      }
+    }
+
+    @include mq(desktop) {
+      &::before {
+        width: 104px;
+        height: 104px;
+        top: 24px;
+        background-image: url(../images/advantages/face-3-desk.png);
+
+        @include mq(retina) {
+          background-image: url(../images/advantages/face-3-desk@2x.png);
+        }
+
+        @supports (background-image: url(../images/advantages/face-3-desk.webp)) {
+          background-image: url(../images/advantages/face-3-desk.webp);
+
+          @include mq(retina) {
+            background-image: url(../images/advantages/face-3-desk@2x.webp);
+          }
+        }
+      }
+    }
+  }
+}
+
+// sass "for"
+// @for $i from 1 to 4 {
+//   &:nth-child(#{$i}) {
+//     background-image: url('../images/section/#{$i}.svg');
+//   }
+// }
+
+// use webp
+// background-image: url('../images/header/girl-at-the-table.png');
+// background-image: -webkit-image-set(url('../images/header/girl-at-the-table.webp') 1x);
+
+// use webp @2x
+// @include mq(retina) {
+//     background-image: url('../images/header/girl-at-the-table@2x.png');
+//     background-image: -webkit-image-set(url('../images/header/girl-at-the-table@2x.webp') 2x);
+//   }

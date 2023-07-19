@@ -1,0 +1,33 @@
+{% set section = schedule %}
+
+<section class="{{section.id}} section schedule-section relative overflow-x-hidden">
+  <div class="container">
+    <h2 class="section-title mb-4 md:mb-6 xl:mb-8">{{section.title}}</h2>
+    <ul class="mb-6 md:mb-10">
+      {% for item in section.list %}
+      <li class="schedule-item">
+        <h3 class="mb-4 text-base font-bold md:mb-6 md:text-lg xl:mb-8">{{item.title}}</h3>
+        <ul class="md:flex xl:gap-x-8 mdOnly:justify-between">
+          {% for el in item.list %}
+          <li
+            class="schedule-el flex items-center rounded-3xl bg-grey py-[18px] pl-4 opacity-75 md:w-[336px] md:py-[26px] md:pl-10 xl:w-[384px] xl:py-6"
+          >
+            <div>
+              <h4 class="text-base font-bold uppercase xl:text-lg notXl:mb-1">{{el.title}}</h4>
+              <p class="text-base xl:text-lg">{{el.text}}</p>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </li>
+      {% endfor %}
+    </ul>
+    <button
+      type="button"
+      data-modal-open
+      class="btn h-[56px] w-[280px] md:h-[72px] md:w-[336px] xl:h-[56px] xl:w-[438px] notXl:mx-auto"
+    >
+      {{section.button}}
+    </button>
+  </div>
+</section>

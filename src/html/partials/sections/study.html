@@ -1,0 +1,38 @@
+{% set section = study %}
+
+<section class="{{section.id}} section">
+  <div class="container">
+    <h2 class="section-title mb-6 text-center xl:mb-8">{{section.title}}</h2>
+    <p class="mb-6 text-center text-sm xl:mb-8 xl:text-lg">
+      {{section.text.main}} <span class="font-bold smOnly:block">{{section.text.parts}}</span>
+    </p>
+
+    <div class="mb-6 grid grid-cols-1 gap-6 md:mb-10 md:grid-cols-2 md:gap-8">
+      {% for skill in section.skills %}
+      <div
+        class="rounded-card bg-white px-3 py-6 text-sm shadow-card md:px-4 md:py-8 xl:py-10 xl:pl-10 xl:pr-[26px] xl:text-lg"
+      >
+        <h3 class="mb-3 font-bold uppercase md:mb-4 xl:mb-5">
+          {{skill.text}}
+          <span class="text-button">{{skill.title}}</span>
+        </h3>
+        <ul class="xl:pl-8">
+          {% for item in skill.list %}
+          <li class="study-item mb-3 pl-8 last:mb-0 md:mb-4 xl:mb-5 xl:pl-10">{{item}}</li>
+
+          {% endfor %}
+        </ul>
+      </div>
+
+      {% endfor %}
+    </div>
+
+    <button
+      type="button"
+      data-modal-open
+      class="btn mx-auto h-14 w-[280px] md:h-[72px] md:w-[336px] xl:h-14 xl:w-[438px] mdOnly:px-8"
+    >
+      {{section.button}}
+    </button>
+  </div>
+</section>

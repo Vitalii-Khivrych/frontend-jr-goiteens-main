@@ -1,0 +1,40 @@
+.header {
+  background: url('../images/header/background.png');
+  background-position: center;
+  background-size: cover;
+  @include mq(retina) {
+    background-image: url('../images/header/background@2x.png');
+  }
+  @supports (background-image: url('../images/header/background.webp')) {
+    background-image: url('../images/header/background.webp');
+    @include mq(retina) {
+      background-image: url('../images/header/background@2x.webp');
+    }
+  }
+  .label {
+    &::before {
+      content: '[';
+      left: 0;
+      top: 45%;
+      position: absolute;
+      transform: translateY(-50%);
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 30px;
+      letter-spacing: 0.06em;
+      color: #fec830;
+    }
+    &::after {
+      content: ']';
+      right: 0;
+      position: absolute;
+      top: 45%;
+      transform: translateY(-50%);
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 30px;
+      letter-spacing: 0.06em;
+      color: #fec830;
+    }
+  }
+}
